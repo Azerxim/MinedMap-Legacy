@@ -172,15 +172,11 @@ Chunk::Heightmap Chunk::getTopLayer(int flags) const {
 			ret.v[x][z] = Height { .y = y_idx_min, .depth = y_idx_min };
 	}
 
-	// Nether/Cave Mode
-	/*int maxY = sections.size() -1;
+	int maxY = sections.size() -1;
 	if (maxY > 4)
 		maxY = 4;
 	
-	for (ssize_t Y = maxY; Y >= 0; Y--) {*/
-
-	// Normal Mode
-	for (section_idx_t Y = sections.size() - 1; Y >= 0; Y--) {
+	for (ssize_t Y = maxY; Y >= 0; Y--) {
 		if (done == SIZE*SIZE)
 			break;
 
